@@ -1,0 +1,119 @@
+ /* Color of the links BEFORE scroll */
+ *{
+	margin:0 ;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+.logo{
+    padding: 8px;
+  font-size: 1.5em;
+  background: linear-gradient(
+              to right, rgb(170, 135, 235), #4324ce);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+  text-decoration: none;
+  }
+body {
+    background:#fff;
+    font-family: Assistant, sans-serif;
+    display: flex;
+    min-height: 90vh;
+    
+  }
+  #appointment{
+    padding: 100px 100px 100px 250px;
+  }
+  .btn-appointment{
+    height: 40px;
+        width: 220px;
+        background-color: white;
+        color: black;
+        border: 2px solid rgb(111, 200, 223);
+        text-decoration: none;
+        display: inline-block;
+        margin: 40px 20px 10px 40px;
+        margin-left: 250px;
+        font-size: 17px;
+        border-radius: 15px;
+    }
+    .btn-appointment:hover{
+    background: rgb(111, 200, 223);
+      color: white;
+      transition: 0.5s;
+    }
+    #appointmentcomment{
+        margin-left: 130px;
+    }
+    
+ input[type=text],
+ input[type=time],
+ input[type=date],
+ input[type=number]{
+  width: 30%;
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  margin-left: 6px;
+  margin-right: 6px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  outline: none;
+  border-radius: 13px;
+  box-shadow: 0px 0px 0px 2px lightgrey;
+}
+textarea {
+        width: 27%;
+        padding: 10px;
+        margin: 5px 0 20px 0;
+        margin-left: 86px;
+        margin-right: 6px;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+        outline: none;
+        border-radius: 13px;
+        box-shadow: 0px 0px 0px 2px lightgrey;
+}
+select{
+
+    width: 30%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    outline: none;
+    border-radius: 13px;
+    box-shadow: 0px 0px 0px 2px lightgrey;
+  }
+  
+  hr {
+    border: 1px solid rgb(111, 200, 223);
+    margin-bottom: 25px;
+    margin-top: -5px;
+  }
+  
+
+  h6{
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-top: 8px;
+    padding-top: 7px;
+  }
+.container-appointment
+{
+    min-height: 350px;
+    width: 800px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin-right: 50px;
+}
+
+#email{
+  margin-left: 60px;
+}

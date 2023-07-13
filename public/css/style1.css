@@ -1,0 +1,299 @@
+ /* Color of the links BEFORE scroll */
+*{
+	margin:0 ;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 99;
+}
+
+.header .logo{
+	font-size: 1.7em;
+	color: #fff;
+	text-decoration: none;
+}
+ 
+.nav a{
+	position: relative;
+	font-size: 1.1em;
+	color: #fff;
+	text-decoration: none;
+	margin-left: 40px;
+}
+.nav a::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	border-radius: 5px;
+	transform: scaleX(0);
+	transition: .5s;
+}
+
+.nav a:hover::after{
+	transform: scaleX(1);
+}
+
+.home1{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url('/image/doc3.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	padding: 80px 80px 0;	
+}
+.home1 .content{
+	font-size: medium;
+	color: #fff;
+}
+.about1{
+	
+	position: relative;
+	width: 100%;
+	align-items: center;
+	margin: 0 auto;
+	font-size: 20px;
+	background: url('/image/bc3.jpg') ;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	background: #f5f5f5;
+	
+}
+.mv
+{
+	position: relative;
+	display: inline-block;
+	align-items: center;
+}
+.img{
+	margin-left:50px;
+}
+.vision, .mission{
+	width: 600px;
+	position: relative;
+	background: #f5f5f5;
+    border-radius: 15px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 20px;
+	margin-right: 20px;
+	
+}
+.vision h4, .mission h4{
+	color: #c656e2;
+}
+.about{
+	background: #f5f5f5;
+}
+.con-detail{
+	
+	padding: 20px 20px 20px 20px ;
+	background: #f5f5f5;
+    align-items: center;
+	font-size: 20px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border-radius: 15px;
+	
+}
+.con-detail h6{
+	background: #fff;
+    align-items: center;
+	font-size: 20px;
+}
+.address,.phno{
+	display: inline-block;
+}
+.con-detail .p1,.con-detail .p2{
+	display: inline-block;
+    padding: 40px 40px;
+
+}
+.con-detail .p3,.con-detail .p4{
+
+    padding: 40px 40px;
+
+}
+.con-detail .icon{
+	font-size: 1.2em;
+	top: 14px;
+	left: 15px;
+	color: #c656e2;
+
+}
+.contact{
+	position: relative;
+	width: 100%;
+	background-size: cover;
+	background-color: #efd5f5;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	padding: 80px 100px 0;
+	justify-content: space-between;
+	
+}
+.git{
+	font-size: 26px;
+	color: #c656e2;
+	padding: 20px 40px;
+}
+#statistic-1 {
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.cards{
+    
+    width: 100%;
+    padding: 25px 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 80px;
+}
+
+.cards .card{
+    background: linear-gradient(45deg, rgb(170, 135, 235), #cd8deb);
+    padding: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border-radius: 15px;
+    padding-left: 40px;
+}
+
+.number{
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+}
+.card-name{
+    color: #444;
+    font-weight: 600;
+}
+.icon-box i{
+    font-size: 45px;
+    color: #444;
+    padding-left: 7px;
+}
+.home{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url('/image/doc2.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	padding: 80px 100px 0;
+	justify-content: space-between;
+}
+.home .content{
+	max-width: 600px;
+	background: linear-gradient(
+            to right, rgb(170, 135, 235), #4324ce);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+}
+.content h2{
+	font-size: 2.3em;
+	letter-spacing: .03em;
+}
+
+.home .wrapper-login {
+	position: relative;
+	width: 440px;
+}
+.wrapper-login h2{
+	font-size: 2em;
+	color: #fff;
+	text-align: center;
+}
+
+.wrapper-login .input-box{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin: 40px 0;
+}
+.input-box select{
+	width: 50%;
+	height: 100%;
+	border:1px solid rgb(170, 135, 235);
+	outline: none;
+	border-radius: 40px;
+	padding: 0 25px 0 45px;
+}
+.input-box input{
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border:1px solid rgb(170, 135, 235);
+	outline: none;
+	border-radius: 40px;
+	padding: 0 25px 0 45px;
+
+}
+.input-box input::placeholder{
+	color: black;
+}
+
+.input-box .icon{
+	position: absolute;
+	font-size: 1.2em;
+	top: 14px;
+	left: 15px;
+	color: #fff;
+
+}
+
+.home .wrapper-login .btn, .addpat .btn
+{
+	width: 100%;
+	height: 50px;
+	border:none;
+	outline: none;
+	border-radius: 40px;
+	background: linear-gradient(90deg, rgb(170, 135, 235), #4324ce);
+	box-shadow: 0 8px 10px rgba(0,0, 0,.5);
+	cursor: pointer;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 500;
+
+}
+.wrapper-login .regiter-link{
+	font-size: .9em;
+	color: #fff;
+	text-align: center;
+	margin: 30px 0;
+}
+.regiter-link p a{
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+.regiter-link p a:hover{
+	color: #4324ce ;
+}
+
