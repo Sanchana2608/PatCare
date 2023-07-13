@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <a href="#" class="logo">
+    PatCare</a>
+    <section class='reg' id='reg'>
+        <div class='form'>
+            <form class="registartion-form" action="/register" method="post">
+              <div class="container">
+                <h1>Register</h1>
+                <div class="part1">
+                  <p>Enter patient details</p>
+                  <hr>
+      
+                  <table>
+                    <tr>
+                      <td><label for="name">Patient ID:</label></td>
+                      <td><input type="text" name="pid" id="name" ></td>
+                      <td><label for="password">Password:</label></td>
+                      <td><input type="text" name="password" id="password" ></td>
+                    </tr>
+                    <tr>
+                      <td><label for="name">First Name:</label></td>
+                      <td><input type="text" name="fname" id="name" ></td>
+                      <td><label for="name">Last Name:</label></td>
+                      <td><input type="text" name="lname" id="name" ></td>
+                    </tr>
+                    <tr >
+                      
+                      <td><label for="dob">Birthdate:</label></td>
+                      <td><input type="date" name="dob" id="dob"></td>
+                      <td><label for="age">Age:</label></td>
+                      <td><input type="number" name="age" id="age"></td>
+                      </tr>
+                    <tr>
+                      
+                      <td><label for="gender">Gender:</label></td>
+                      <td>
+                        <select class="gen" name="gender" id="gender" onChange="showField(this.value);" required>
+                          <option value="">-- Select --</option>
+                          <option value="male"  >Male</option>
+                          <option value="female"  >Female</option>
+                          <option value="others"  >Other</option>
+                        </select></td>
+                        <td><label for="Blood-group">Blood group:</label></td>
+                        <td>
+                          <select name="bgrp" class="bgrp" id="bgrp">
+                            <option value="">-- Select --</option>
+                            <option value="B+ve">B+ve</option>
+                            <option value="B-ve">B-ve</option>
+                            <option value="A+ve">A+ve</option>
+                            <option value="A-ve">A-ve</option>
+                            <option value="O+ve">O+ve</option>
+                            <option value="O-ve">O-ve</option>
+                            <option value="AB+ve">AB+ve</option>
+                            <option value="AB-ve">AB-ve</option>
+                          </select></td>
+                        </tr>
+                        <tr >
+                          
+                          <td><label for="height">Height:</label></td>
+                          <td><input type="number" name="height" id="height"></td>
+                          <td><label for="weight">Weight:</label></td>
+                          <td><input type="number" name="weight" id="weight"></td>
+                          </tr>
+
+                    
+  
+                      <tr>
+                        
+                          <td><label for="phoneNumber">Phone Number:</label></td>
+                          <td><input type="number" name="phno" id="phoneNumber"></td>
+                          <td><label for="email">Email:</label></td>
+                          <td><input type="text" name="email" id="email" ></td>
+                      </tr>
+                      <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td>
+                          <textarea name="address" id="address" ></textarea></td>
+                          <td><label for="zipcode">Zip Code:</label></td>
+                        <td><input type="number" name="zipcode" id="zipcode"></td>
+                        
+                      </tr>  
+                    </table>
+                </div>
+        <hr>
+        <div class="check">
+          <div class="part1">
+            <h1 class="title">Is Chronic?</h1>
+  
+            <ul class="unstyled centered">
+              <li>
+                <input name="chronic" class="styled-checkbox" type="checkbox" value="Diabities">
+                <label for="styled-checkbox-1">Diabities</label>
+              </li>
+              <li>
+                <input name="chronic" class="styled-checkbox" type="checkbox" value="Low blood Pressure" >
+                <label for="styled-checkbox-2">Low blood Pressure</label>
+              </li>
+              <li>
+                <input name="chronic" class="styled-checkbox" type="checkbox" value="Viral fever" >
+                <label for="styled-checkbox-3">Heart disease</label>
+              </li>
+              <li>
+                <input name="chronic" class="styled-checkbox" type="checkbox" value="High blood Pressure">
+                <label for="styled-checkbox-4">High blood Pressure</label>
+              </li>
+              <li>
+                <input name="chronic" id="styled-checkbox-5" type="checkbox" value="low sugar">
+                <label for="styled-checkbox-5">low sugar</label>
+              </li>
+              <li>
+                <input name="chronic" id="styled-checkbox-5" type="checkbox" value="low sugar">
+                <label for="styled-checkbox-5">Asthma</label>
+              </li>
+            </ul>
+          </div>
+          <div class="part2">
+            <h1 class="title">Is Allergy?</h1>
+    
+              <ul class="unstyled centered">
+                <li>
+                  <input name="allergy" id="checkbox-1" type="checkbox" value="peanut allergy">
+                  <label for="styled-checkbox-1">Peanut allergy</label>
+                </li>
+                <li>
+                  <input name="allergy" id="checkbox-2" type="checkbox" value="fish allergy" >
+                  <label for="styled-checkbox-2">fish allergy</label>
+                </li>
+                <li>
+                  <input name="allergy" id="checkbox-3" type="checkbox" value="tree nuts allergy" >
+                  <label for="styled-checkbox-3">Tree nuts allergy</label>
+                </li>
+                <li>
+                  <input name="allergy" id="checkbox-4" type="checkbox" value="soy allergy">
+                  <label for="styled-checkbox-4">Soy allergy</label>
+                </li>
+              </ul>
+          </div>
+        </div class="heading">
+        
+        <button type="submit" class='btn-Register' id='do-Register'>Register</button>
+        <button  class='btn-back' onclick="history.back()" type="reset" value="Cancel">Back</button>
+        </div>
+            
+    </form>
+    </div>
+    </section>
+    <footer>
+      
+    </footer>
+    <!-- partial -->
+      <script  src="./script.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    
+    </body>
+    </html>
+
+
+  

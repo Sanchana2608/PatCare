@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style3.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <a href="#" class="logo">
+    PatCare</a>
+    <div id="appointment" class="main">		
+        <form action="/bookap" method="post">
+        <div class="container-appointment">
+            <h3>Make a Appointment</h3>
+            <div class="patient-info">
+                <h6>Patient Info</h6>
+                <hr>
+              <label for="name">Patient ID:</label>
+              <input type="text" name="pid" id="pid" >
+              <label for="name">Patient Name:</label>
+              <input type="text" name="name" id="name" >
+              <br>
+              <label for="name">Phone no:</label>
+              <input type="text" name="phno"  >
+              <label for="name">Email:</label>
+              <input type="text" name="email"  id="email">
+            </div>
+            <div class="doc-info">
+                <h6>Doctor Info</h6>
+                <hr>
+              <label for="name">Spaciality:</label>
+              <select name="speciality" class="speciality" id="speciality">
+                  <option value="">-- Select --</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="Dermatology">Dermatology</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Gynecology">Gynecology </option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Endocrinology">Endocrinology</option>
+                </select>
+              <label for="name">Doctor Name:</label>
+              <input type="text" name="doctorname" id="name" >
+            </div>
+            <div class="appointment-info">
+              <h6>Appointment Info</h6>
+                <hr>
+                <label for="name">Appointment date</label>
+              <input type="date" name="appointmentdate"  >
+              <label for="name">Appointment time</label>
+              <input type="time" name="appointmenttime"  >
+               <br>
+               <label for="name">Description</label>
+              <br>
+              <textarea name="description" id="appointmentcomment" placeholder="description" ></textarea>
+
+<hr>
+              <button type="submit" class='btn-appointment' id='do-Register'>Book Appointment</button>
+              <button type="reset" class='btn-appointment' onclick="history.back()"  id='do-Register'>Back</button>
+            </div>
+    </form>
+    </div>
+</body>
+</html>

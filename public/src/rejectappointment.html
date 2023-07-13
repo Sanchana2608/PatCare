@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style2.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="appointmentcontainer">
+      <h3>Do you want to reject this appointment?</h3>
+        <form method="post" action="/reject-appointment/<%=x._id%>?_method=put">
+    <table class="appointmenttable">
+        <tr>
+          <td class="title">Appointment id :</td>
+          <td><%=x.appointmentid%></td>
+        </tr>
+        <tr>
+          <td class="title">Patient id :</td>
+          <td><%=x.patientname%></td>
+        </tr>
+        <tr>
+            <td class="title">Phone Number :</td>
+            <td><%=x.phno%></td>
+          </tr>
+          <tr>
+        <tr>
+            
+            <td class="title">Email :</td>
+            <td><%=x.email%></td>
+          </tr>
+        <tr>
+            <td class="title">Department :</td>
+            <td><%=x.speciality%></td>
+        </tr>
+        
+        <tr>
+            <td class="title">Appointment Date :</td>
+            <td><%=x.appointmentdate%></td>
+        </tr>
+        <tr>
+            <td class="title">Appointment Time :</td>
+            <td><%=x.appointmenttime%></td>
+        </tr>
+        <tr>
+            <td class="title">Description :</td>
+            <td><%=x.description%></td>
+        </tr>
+      </table>
+      <button type="submit"  class='btn-Register' id='do-Register'>Reject</button>
+      <button type="reset" class='btn-Register' onclick="history.back()" id='do-Register'>Back</button>
+    </form>
+    </div>
+</body>
+</html>

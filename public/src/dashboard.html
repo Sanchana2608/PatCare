@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<head>
+	
+	<link rel="stylesheet" href="/css/style2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/4e752b6768.js" crossorigin="anonymous" ></script>
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"  />
+
+
+	<title>Patcare</title>
+</head>
+	<body>
+		
+		<div class="container">
+			<div class="slidebar">
+				<ul>
+					<li>
+						<a href="#" class="logo">
+							<ion-icon name="heart-outline">
+							</ion-icon>
+							<div class="title">PatCare</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-th-large"></i>
+							<div class="title" id="dash" onclick="opencontainer('dashboard')">Dashboard</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-user"></i>
+							<div class="title" onclick="opencontainer('patient')">Patient </div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-user-md"></i>
+							<div class="title" onclick="opencontainer('doctor')">Doctor</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" >
+							<i class="fas fa-user-nurse"></i>
+							<div class="title"onclick="opencontainer('receptionist')">Receptionist</div>
+						</a>
+					</li>
+					<li>
+						<a href="src/login.html">
+							<i class="fa-solid fa-person-walking-arrow-right"></i>
+							<div class="title">Log Out</div>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+
+			<div class="top-bar">
+				<i class="fa fa-bell" ></i>
+				<div class="search">
+					<p>Welcome admin!</p>
+				</div>
+				<div class="user">
+					<img src="image/doc1.jpg" alt="">
+				</div>
+			</div>
+
+
+			<div class="main" id="dashboard">
+				
+				<div class="cards">
+					<div class="card">
+						<div class="card-content">
+							<div class="number">67</div>
+							<div class="card-name">Appointment</div>
+						</div>
+
+					</div>
+					<div class="card">
+						<div class="card-content">
+							<div class="number">105</div>
+							<div class="card-name">New Patients</div>
+						</div>
+
+					</div>
+					<div class="card">
+						<div class="card-content">
+							<div class="number">8</div>
+							<div class="card-name">Operations</div>
+						</div>
+
+					</div>
+					<div class="card">
+						<div class="card-content">
+							<div class="number">50,00rs</div>
+							<div class="card-name">Earnings</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="tables">
+					<div class="last-appointments">
+						<div class="heading">
+							<h2>Last appointments</h2>
+							
+						</div>
+						<table class="appointment">
+							<thead>
+								<td>Patient</td>
+								<td>Doctor</td>
+								<td>Speciality</td>
+								<td>Date</td>
+								<td>Time</td>
+							</thead>
+							<tbody>
+								<%k.forEach((y)=>{%>
+									<tr>
+										<td><%=y.patientname%></td>
+										<td><%=y.doctorname%></td>
+										<td><%=y.speciality%></td>
+										<td><%=y.appointmentdate%></td>
+										<td><%=y.appointmenttime%></td>
+										
+									</tr>
+									<%})%>
+							</tbody>
+						</table>
+					</div>
+					
+				</div>
+			</div>
+
+		
+			<div id="patient" class="main">
+				<div class="cont">
+					<div class="addpat">
+							<a href="/add-patient" class="btn">
+								<span class="text-gradient">New Patient 
+									<i class="fas fa-user" aria-hidden="true">
+									</i>
+								 </span>
+								</a>
+					</div>
+					<div class="searchpat" style="display: none;">
+						<input type="text" name="search" placeholder="Search for patient?" >
+						<span class="searchbtn"> <i class="fa fa-search" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<div class="tables">
+					<div class="patent-list">
+						<div class="heading">
+							<h2>Patient List</h2>
+							
+						</div>
+						<table class="patienttable" id="patienttable">
+							<thead>
+								<td>Name</td>
+								<td>age</td>
+								<td>gender</td>
+								<td>mail</td>
+								<td>Action</td>
+							</thead>
+							<tbody>
+								<%x.forEach((y)=>{%>
+								<tr>
+									<td><%=y.firstname%></td>
+									<td><%=y.age%></td>
+									<td><%=y.gender%></td>
+									<td><%=y.email%></td>
+									<td>
+										<a href="/edit/<%=y.pid%>" class="btn border-shadow update">
+											edit
+										</a> 
+										<a href="/delete-pat/<%=y.pid%>" class=" delete">
+											<form style="display: inline; " action="/delete-pat/<%=y.pid%>?_method=delete" method="post">
+												<button type="submit" class='btn-edit' id='do-edit'>
+													delete
+												</button>
+											</form>
+											
+										</a> 
+									</td>
+								</tr>
+								<%})%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="doctor" class="main">
+				<div class="cont">
+					<div class="adddoc">
+							<a href="/add-doc" class="btn">
+								<span class="text-gradient">New Doctor 
+									<i class="fas fa-user" aria-hidden="true">
+									</i>
+								 </span>
+								</a>
+					</div>
+				</div>
+				<div class="tables">
+					<div class="doc-list">
+						<div class="heading">
+							<h2>Doctor List</h2>
+							
+						</div>
+						<table class="appointment">
+							<thead>
+								<td>Name</td>
+								<td>Department</td>
+								<td>Gender</td>
+								<td>Experience</td>
+								<td>Mail</td>
+								<td>Action</td>
+							
+							</thead>
+							<tbody>
+								<%a.forEach((y)=>{%>
+									<tr>
+										<td><%=y.firstname%></td>
+										<td><%=y.speciality%></td>
+										<td><%=y.gender%></td>
+										<td><%=y.experience%></td>
+										<td><%=y.email%></td>
+										<td>
+											<a href="/edit-doc/<%=y.did%>" class="btn border-shadow update">
+												edit
+											</a> 
+
+											<a href="/delete-doc/<%=y.did%>" class="delete">
+												<form style="display: inline; " action="/delete-doc/<%=y.did%>?_method=delete" method="post">
+													<button type="submit" class='btn-edit' id='do-edit'>
+														delete
+													</button>
+												</form>
+												
+											</a>
+										</td>
+									</tr>
+									<%})%>
+									
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="receptionist" class="main">
+				<div class="cont">
+					<div class="addrec">
+							<a href="/add-rec" class="btn">
+								<span class="text-gradient">New Receptionist 
+									<i class="fas fa-user" aria-hidden="true">
+									</i>
+								 </span>
+								</a>
+					</div>
+					<div class="searchpat" style="display: none;">
+						<input type="text" name="search" placeholder="Search for receptionist?">
+						<span class="searchbtn"> <i class="fa fa-search" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<div class="tables">
+					<div class="rec-list">
+						<div class="heading">
+							<h2>Receptionist List</h2>
+						</div>
+						<table class="appointment">
+							<thead>
+								<td>Name</td>
+								<td>Experience</td>
+								<td>gender</td>
+								<td>mail</td>
+								<td>Phone number</td>
+								<td>Action</td>
+							</thead>
+							<tbody>
+								<%b.forEach((y)=>{%>
+									<tr>
+										<td><%=y.fullname%></td>
+										<td><%=y.experience%></td>
+										<td><%=y.gender%></td>
+										<td><%=y.email%></td>
+										<td><%=y.phno%></td>
+										
+										<td>
+											<a href="/edit-rec/<%=y.rid%>" class="btn border-shadow update">
+											edit
+											</a> 
+											<a href="/delete-rec/<%=y.rid%>" class=" delete">
+												<form style="display: inline; " action="/delete-rec/<%=y.rid%>?_method=delete" method="post">
+													<button type="submit" class='btn-edit' id='do-edit'>
+														delete
+													</button>
+												</form>
+												
+											</a> 
+										</td>
+									</tr>
+									<%})%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script>
+			function opencontainer(pagename){
+				var i,title,main;
+				
+				main = document.getElementsByClassName("main");
+    			for (i = 0; i < main.length; i++) {
+       				 main[i].style.display = "none";;
+    			}
+				document.getElementById(pagename).style.display = "block";
+			}
+			document.getElementById("dash").click();
+		</script>
+	</body>
+</html>
+
+
+	<div class="col-sm-12">
+	  <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
+		<button type="button" class="close font__size-18" data-dismiss="alert">
+								  <span aria-hidden="true"><a>
+				  <i class="fa fa-times greencross"></i>
+				  </a></span>
+								  <span class="sr-only">Close</span> 
+							  </button>
+		<i class="start-icon far fa-check-circle faa-tada animated"></i>
+		<strong class="font__weight-semibold">Well done!</strong> You successfullyread this important.
+	  </div>
+	</div>

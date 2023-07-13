@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style2.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="appointmentcontainer">
+        <form method="post" action="/savebill">
+    <table class="appointmenttable">
+      <tr>
+        <td class="title">Bill Id :</td>
+        <td><input type="text" value="<%=billid%>" id="inputfield" name="billid" readonly></td>
+        <td class="title">Bill Date :</td>
+        <td><input type="text" value="<%=billdate%>" id="inputfield" name="billdate" readonly></td>
+      </tr>
+        <tr>
+          <td class="title">Appointment id :</td>
+          <td><input type="text" value="<%=appointmentid%>" id="inputfield" name="aid" readonly></td>
+          <td class="title">Patient name :</td>
+          <td><input type="text" value="<%=patientname%>" id="inputfield" name="pname" readonly></td>
+        </tr>
+        <tr>
+            <td class="title">Patient id :</td>
+            <td><input type="text" value="<%=patientid%>" id="inputfield" name="pid" readonly></td>
+   
+          </tr>
+
+      </table>
+      <div class="bill-information">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Doctor fees</td>
+                    <td><input type="text" value="<%=doctorfee%>" id="inputfield" name="doctorfee" readonly></td>
+                </tr>
+                <tr>
+                    <td>Drug fees</td>
+                    <td><input type="text" value="<%=drugammount%>" id="inputfield" name="drugfee" readonly></td>
+                </tr>
+                <tr>
+                    <td>Lab Test fees</td>
+                    <td><input type="text" value="<%=testammount%>" id="inputfield" name="testfee" readonly></td>
+                </tr>
+                <tr id="totalrow">
+                    <td>Total</td>
+                    <td><input type="text" value="<%=totalammount%>" id="inputfield" name="totalfee" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+      <button type="submit"  class='btn-Register' id='do-Register'>Save bill</button>
+      <button type="reset" class='btn-Register' onclick="history.back()"  id='do-Register'>Back</button>
+    </form>
+    </div>
+
+</body>
+</html>
+

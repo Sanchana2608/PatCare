@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <a href="#" class="logo">
+    PatCare</a>
+    <section class='edit' id='edit'>
+        <div class='form'>
+            <form  id="edit" class="edit-form" method="post" action="/edit-doc/<%=x.did%>?_method=put">
+              <div class="container">
+                <h1>Update</h1>
+                <div class="part1">
+                  <p>Edit Doctor details</p>
+                  <hr>
+      
+                  <table>
+                    <tr>
+                        <td><label for="name">Doctor ID:</label></td>
+                        <td><input type="text" name="did"  id="name" value="<%=x.did%>" ></td>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="text" name="password" id="password" value="<%=x.password%>" ></td>
+                      </tr>
+                    <tr>
+                      <td><label for="name">First Name:</label></td>
+                      <td><input type="text" name="fname" id="name" value="<%=x.firstname%>" ></td>
+                      <td><label for="name">Last Name:</label></td>
+                      <td><input type="text" name="lname" id="name" value="<%=x.lastname%>" ></td>
+                    </tr>
+                    <tr >
+                      
+                      <td><label for="dob">Birthdate:</label></td>
+                      <td><input type="date" name="dob" id="dob" value="<%=x.dob%>"></td>
+                      <td><label for="age">Age:</label></td>
+                      <td><input type="number" name="age" id="age" value="<%=x.age%>"></td>
+                      </tr>
+                    <tr>
+                      
+                      <td><label for="gender">Gender:</label></td>
+                      </td>
+                      <td>
+                        <select class="gen" name="gender" id="gender"  onChange="showField(this.value);" required>
+                          <option value="">-- Select --</option>
+                          <option value="male"  >Male</option>
+                          <option value="female"  >Female</option>
+                          <option value="others"  >Other</option>
+                        </select></td>
+                        <td><label for="speciality">speciality:</label></td>
+                        <td>
+                          <select name="speciality" class="speciality" id="speciality">
+                            <option value="">-- Select --</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Dermatology">Dermatology</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Gynecology">Gynecology </option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Endocrinology">Endocrinology</option>
+                          </select></td>
+                        
+                        </tr>
+                        <tr >
+                          
+                          <td><label for="height">Education:</label></td>
+                          <td><input type="text" name="education"  value="<%=x.education%>"></td>
+                          <td><label for="weight">Experience:</label></td>
+                          <td><input type="number" name="experience"  value="<%=x.experience%>"></td>
+                          </tr>
+  
+                      <tr>
+                        
+                          <td><label for="phoneNumber">Phone Number:</label></td>
+                          <td><input type="number" name="phoneNumber" id="phoneNumber" value="<%=x.phno%>"></td>
+                          <td><label for="email">Email:</label></td>
+                          <td><input type="text" name="email" id="email" value="<%=x.email%>"></td>
+                      </tr>
+                      <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td>
+                          <textarea name="address" id="address"><%=x.address%></textarea>
+                          <td><label for="zipcode">Zip Code:</label></td>
+                        <td><input type="number" name="zipcode" id="zipcode" value="<%=x.zipcode%>"></td>
+                        </td>
+                      </tr>  
+                    </table>
+                </div>
+        <hr>
+               
+        <button type="submit" class='btn-edit' id='do-edit'>Edit</button>
+        <button  class='btn-back' onclick="history.back()"   type="reset" value="Cancel">Back</button>
+        </div>
+            
+    </form>
+    </div>
+    </section>
+    <footer>
+      
+    </footer>
+    <!-- partial -->
+      <script  src="./script.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    
+    </body>
+    </html>
+
+    <div class="popup">
+      <div class="popcard">
+        <h1>Data edited successfully</h1>
+        <p>Click anywhere to close the message</p>
+      </div>
+    </div>
+    
+    
+  
+
+<script>
+      let popup = document.querySelector(".popup"),
+      button = document.querySelector(".btn-edit");
+
+      button.addEventListener("click", openPop);
+
+    function openPop(){
+      popup.style.display = "Block";
+    }
+
+    window.addEventListener("click", closePop);
+
+    function closePop(e){ 
+    if(e.target == popup) {
+      popup.style.display = "none";
+    }
+    }
+</script>
+  

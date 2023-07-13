@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <link rel="stylesheet" href="../css/style1.css">
+    <title>Profile</title>
+</head>
+<body>
+    <header class="header">
+    <!-- Navbar -->
+    <a href="#" class="logo">
+        <ion-icon name="heart-outline">
+
+        </ion-icon>PatCare</a>
+    <!--Section: Design Block-->
+    <nav class="nav">
+        <a href="../src/index.html">Home</a>
+        <a href="../src/index.html#about1">About</a>
+        <a href="../src/index.html#contact1">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+    
+  </header>
+  <section class="home">
+    <div class="content">
+        <h2>Stay Happy, Stay Healthy</h2>
+    </div>
+    <div class="wrapper-login">
+        <h2>Signup</h2>
+        <form action="/signup" method="post">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                <input type="text" placeholder='Username' class='text' id='username' name="name" required><br>
+                
+            </div>  
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </span>
+                <input type="password" placeholder='Password' id='password' name="password" required><br> 
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                </span>
+                <input type="password" placeholder='Repeat Password' id='confirm_password'  name="repeat_password" onchange='check_pass();'/><br> 
+            </div>
+            <button type="submit" class="btn" id="submit" disabled>Sign up</button>
+            <div class="regiter-link">
+                <p>Already a member? <a href="login.html">Sign in</a>.</p>
+            </div>    
+        
+        </form>
+    </div>   
+  </section>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+<script >
+    function check_pass() {
+    if (document.getElementById('password').value ==
+            document.getElementById('confirm_password').value) {
+        document.getElementById('submit').disabled = false;
+    } else {
+        var message = "Password doesnot match";
+        alert(message);
+        document.getElementById('submit').disabled = True;
+    }
+}
+</script>
+</body>
+</html>

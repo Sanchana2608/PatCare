@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="/css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <a href="#" class="logo">
+    PatCare</a>
+    <section class='edit' id='edit'>
+        <div class='form'>
+            <form  id="edit" class="edit-form" method="post" action="/edit/<%=x.pid%>?_method=put">
+              <div class="container">
+                <h1>Update</h1>
+                <div class="part1">
+                  <p>Edit Patient details</p>
+                  <hr>
+      
+                  <table>
+                    <tr>
+                        <td><label for="name">Patient ID:</label></td>
+                        <td><input type="text" name="pid"  id="name" value="<%=x.pid%>" ></td>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="text" name="password" id="password" value="<%=x.password%>" ></td>
+                      </tr>
+                    <tr>
+                      <td><label for="name">First Name:</label></td>
+                      <td><input type="text" name="fname" id="name" value="<%=x.firstname%>" ></td>
+                      <td><label for="name">Last Name:</label></td>
+                      <td><input type="text" name="lname" id="name" value="<%=x.lastname%>" ></td>
+                    </tr>
+                    <tr >
+                      
+                      <td><label for="dob">Birthdate:</label></td>
+                      <td><input type="date" name="dob" id="dob" value="<%=x.dob%>"></td>
+                      <td><label for="age">Age:</label></td>
+                      <td><input type="number" name="age" id="age" value="<%=x.age%>"></td>
+                      </tr>
+                    <tr>
+                      
+                      <td><label for="gender">Gender:</label></td>
+                      </td>
+                      <td>
+                        <select class="gen" name="gender" id="gender"  onChange="showField(this.value);" required>
+                          <option value="<%=x.gender%>">-- Select --</option>
+                          <option value="male"  >Male</option>
+                          <option value="female"  >Female</option>
+                          <option value="others"  >Other</option>
+                        </select></td>
+                        <td><label for="Blood-group">Blood group:</label></td>
+                        <td>
+                          <select name="bgrp" class="bgrp" id="bgrp" >
+                            <option value="<%=x.bgrp%>">-- Select --</option>
+                            <option value="B+ve">B+ve</option>
+                            <option value="B-ve">B-ve</option>
+                            <option value="A+ve">A+ve</option>
+                            <option value="A-ve">A-ve</option>
+                            <option value="O+ve">O+ve</option>
+                            <option value="O-ve">O-ve</option>
+                            <option value="AB+ve">AB+ve</option>
+                            <option value="AB-ve">AB-ve</option>
+                          </select></td>
+                        </tr>
+                        <tr >
+                          
+                          <td><label for="height">Height:</label></td>
+                          <td><input type="number" name="height" id="height" value="<%=x.height%>"></td>
+                          <td><label for="weight">Weight:</label></td>
+                          <td><input type="number" name="weight" id="weight" value="<%=x.weight%>"></td>
+                          </tr>
+
+                    
+  
+                      <tr>
+                        
+                          <td><label for="phoneNumber">Phone Number:</label></td>
+                          <td><input type="number" name="phoneNumber" id="phoneNumber" value="<%=x.phno%>"></td>
+                          <td><label for="email">Email:</label></td>
+                          <td><input type="text" name="email" id="email" value="<%=x.email%>"></td>
+                      </tr>
+                      <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td>
+                          <textarea name="address" id="address"><%=x.address%></textarea>
+                          <td><label for="zipcode">Zip Code:</label></td>
+                        <td><input type="number" name="zipcode" id="zipcode" value="<%=x.zipcode%>"></td>
+                        </td>
+                      </tr>  
+                    </table>
+                </div>
+        <hr>
+        <div class="check">
+          <div class="part1">
+            <h1 class="title">Is Chronic?</h1>
+  
+            <ul class="unstyled centered">
+              <li>
+                <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="Diabities">
+                <label for="styled-checkbox-1">Diabities</label>
+              </li>
+              <li>
+                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="Low blood Pressure" >
+                <label for="styled-checkbox-2">Low blood Pressure</label>
+              </li>
+              <li>
+                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="Viral fever" >
+                <label for="styled-checkbox-3">Heart disease</label>
+              </li>
+              <li>
+                <input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="High blood Pressure">
+                <label for="styled-checkbox-4">High blood Pressure</label>
+              </li>
+              <li>
+                <input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="low sugar">
+                <label for="styled-checkbox-5">low sugar</label>
+              </li>
+              <li>
+                <input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="low sugar">
+                <label for="styled-checkbox-5">Asthma</label>
+              </li>
+            </ul>
+          </div>
+          <div class="part2">
+            <h1 class="title">Is Allergy?</h1>
+    
+              <ul class="unstyled centered">
+                <li>
+                  <input name="allergy" id="checkbox-1" type="checkbox" value="peanut allergy">
+                  <label for="styled-checkbox-1">Peanut allergy</label>
+                </li>
+                <li>
+                  <input name="allergy" id="checkbox-2" type="checkbox" value="fish allergy" >
+                  <label for="styled-checkbox-2">fish allergy</label>
+                </li>
+                <li>
+                  <input name="allergy" id="checkbox-3" type="checkbox" value="tree nuts allergy" >
+                  <label for="styled-checkbox-3">Tree nuts allergy</label>
+                </li>
+                <li>
+                  <input name="allergy" id="checkbox-4" type="checkbox" value="soy allergy">
+                  <label for="styled-checkbox-4">Soy allergy</label>
+                </li>
+              </ul>
+          </div>
+        </div class="heading">
+        
+        <button type="submit" class='btn-edit' id='do-edit'>Edit</button>
+        <button  class='btn-back' onclick="history.back()"  type="reset" value="Cancel">Back</button>
+        </div>
+            
+    </form>
+    </div>
+    </section>
+    <footer>
+      
+    </footer>
+    <!-- partial -->
+      <script  src="./script.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    
+    </body>
+    </html>
+
+    <div class="popup">
+      <div class="popcard">
+        <h1>Data edited successfully</h1>
+        <p>Click anywhere to close the message</p>
+      </div>
+    </div>
+    
+    
+  
+
+<script>
+      let popup = document.querySelector(".popup"),
+      button = document.querySelector(".btn-edit");
+
+      button.addEventListener("click", openPop);
+
+    function openPop(){
+      popup.style.display = "Block";
+    }
+
+    window.addEventListener("click", closePop);
+
+    function closePop(e){ 
+    if(e.target == popup) {
+      popup.style.display = "none";
+    }
+    }
+</script>
+  

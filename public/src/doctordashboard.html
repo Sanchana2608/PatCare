@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<head>
+	
+	<link rel="stylesheet" href="/css/style2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/4e752b6768.js" crossorigin="anonymous" ></script>
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"  />
+
+
+	<title>Patcare</title>
+</head>
+	<body>
+        <section>
+
+		
+		<div class="container">
+			<div class="slidebar">
+				<ul>
+					<li>
+						<a href="#" class="logo">
+							<ion-icon name="heart-outline">
+							</ion-icon>
+							<div class="title">PatCare</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-th-large"></i>
+							<div class="title" id="dash" onclick="opencontainer('appointment')">Appointment Requested</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-th-large"></i>
+							<div class="title" id="dash" onclick="opencontainer('appointments')">Scheduled Appointment</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fas fa-user"></i>
+							<div class="title" onclick="opencontainer('prescription')">prescription </div>
+						</a>
+					</li>
+
+
+					
+					<li>
+						<a href="#">
+							<i class="fas fa-cog"></i>
+							<div class="title" onclick="opencontainer('profile')">profile</div>
+						</a>
+					</li>
+					<li>
+						<a href="src/login.html">
+							<i class="fa-solid fa-person-walking-arrow-right"></i>
+							<div class="title">Log Out</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="top-bar">
+				<i class="fa fa-bell" ></i>
+				<div class="search">
+					<p>Welcome Patient!</p>
+				</div>
+				<div class="user">
+					<img src="doc1.jpg" alt="">
+				</div>
+			</div>
+
+		
+			<div id="appointment" class="main">
+				<div class="cont">
+				</div>
+				<div class="tables">
+					<div class="patent-list">
+						<div class="heading">
+							<h2>Appointment Request</h2>
+							<a href="#" class="btn">View All</a>
+						</div>
+						<table class="patienttable" id="patienttable">
+							<thead>
+								<td>Patient</td>
+								<td>description</td>
+								<td>Date</td>
+								<td>Time</td>
+								<td>Accept/Reject</td>
+							</thead>
+							<tbody>
+								<%x.forEach((y)=>{%>
+									<tr>
+										<td><%=y.patientname%></td>
+										<td><%=y.description%></td>
+										<td><%=y.appointmentdate%></td>
+										<td><%=y.appointmenttime%></td>
+										<td>
+											<a href="/edit-appointment/<%=y._id%>" class="btn border-shadow update">
+												<span class="text-gradient"> <i class="fa-solid fa-check"></i> </span>
+											</a> 
+											<a href="/reject-appointment/<%=y._id%>" class="btn border-shadow delete">
+												<span class="text-gradient"> <i class="fa-solid fa-xmark"></i></span>
+											</a> 
+										</td>
+									</tr>
+									<%})%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div id="appointments" class="main">
+				<div class="cont">
+				</div>
+				<div class="tables">
+					<div class="patent-list">
+						<div class="heading">
+							<h2>Appointment List</h2>
+							<a href="#" class="btn">View All</a>
+						</div>
+						<table class="patienttable" id="patienttable">
+							<thead>
+								<td>Patient</td>
+								<td>description</td>
+								<td>Date</td>
+								<td>Time</td>
+							</thead>
+							<tbody>
+								<%xsc.forEach((y)=>{%>
+									<tr>
+										<td><%=y.patientname%></td>
+										<td><%=y.description%></td>
+										<td><%=y.appointmentdate%></td>
+										<td><%=y.appointmenttime%></td>
+									</tr>
+									<%})%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+                <div id="prescription" class="main">		
+                    <form action="/prescription-form" method="post">
+                    <div class="container-prescription">
+    
+                        <div class="patient-info">
+                            <h6>Patient Info</h6>
+                            <hr>
+                          <label for="name">Patient ID:</label>
+                          <input type="text" name="pid" id="pid" >
+                          <label for="name">Patient Name:</label>
+                          <input type="text" name="name" id="name" >
+						  <br>
+						  <label for="name">Appointment id:</label>
+                          <input type="text" name="aid" id="aid" >
+                        </div>
+						<div class="doc-info">
+                            <h6>Doctor Info</h6>
+                            <hr>
+                          <label for="name">Doctor ID:</label>
+                          <input type="text" name="did" value="<%=check.did%>" id="did"  readonly>
+                          <label for="name">Doctor Name:</label>
+                          <input type="text" name="doctorname" value="<%=check.firstname%>" id="name" readonly>
+                        </div>
+                        <div class="prescription-info">
+
+                            <div class="drug-info">
+                                <h6>Drug Info</h6>
+
+								<div id="drug1" class="drugs">
+									<hr>
+							<label for="name">Drug type:</label>
+                            <select class="drugtype" name="drugtype" id="drug-type"  required>
+                              <option value="">Drug Type</option>
+                              <option value="caplsule"  >Capsule</option>
+                              <option value="tonic"  >syrup</option>
+                              <option value="tablet"  >tablet</option>
+                              <option value="injection"  >injection</option>
+							  <option value="drops"  >injection</option>
+                            </select>
+							<label for="name">Drug Name:</label>
+                            <select class="drugname" name="drugname" id="drug-name"  required>
+                                <option value="">Drug Name</option>
+								
+                                <option value="Acetaminophen"  >Acetaminophen</option>
+                                <option value="Adderall"  >Adderall</option>
+                                <option value="Ativan"  >Ativan</option>
+								<option value="Lofexidine"  >Lofexidine</option>
+								<option value="Trazodone"  >Trazodone</option>
+								<option value="Onpattro"  >Onpattro</option>
+								<option value="Gilenya"  >Gilenya</option>
+								<option value="Betadine"  >Betadine</option>
+                              </select>
+                              <br>
+							  <label for="name">Drug dose:</label>
+                              <input type="number" name="drugdose" id="drug-dose" placeholder="dose" >
+                              <label for="name">Duration:</label>
+							  <input type="text" name="drugduration" id="drug-duration" placeholder="duration" >
+                              <br>
+							  
+                              <textarea name="drugcomment" id="comment" placeholder="advice/comment" ></textarea>
+                              <br>
+                              <a href="#" class="btn" id="btnd1" onclick="adddrug('drug2','btnd1')">Add Drug</a>
+								</div>
+								<div id="drug2" class="drugs" >
+									<hr>
+							<label for="name">Drug type:</label>
+                            <select class="drug-type" name="drugtypei" id="drug-type"  required>
+                              <option value="">Drug Type</option>
+                              <option value="caplsule"  >Capsule</option>
+                              <option value="tonic"  >tonic</option>
+                              <option value="tablet"  >tablet</option>
+                              <option value="injection"  >injection</option>
+                            </select>
+							<label for="name">Drug Name:</label>
+                            <select class="drug-name" name="drugnamei" id="drug-name"  >
+                                <option value="">Drug Name</option>
+                                <option value="Acetaminophen"  >Acetaminophen</option>
+                                <option value="Asdderall"  >Adderall</option>
+                                <option value="Ativan"  >Ativan</option>
+								<option value="Lofexidine"  >Lofexidine</option>
+								<option value="Trazodone"  >Trazodone</option>
+								<option value="Onpattro"  >Onpattro</option>
+								<option value="Gilenya"  >Gilenya</option>
+								<option value="Betadine"  >Betadine</option>
+                              </select>
+                              <br>
+							  <label for="name">Drug dose:</label>
+                              <input type="number" name="drugdosei" id="drug-dose" placeholder="dose" >
+                              <label for="name">Duration:</label>
+							  <input type="text" name="drugdurationi" id="drug-duration" placeholder="duration" >
+                              <br>
+							  
+                              <textarea name="drugcommenti" id="comment" placeholder="advice/comment" ></textarea>
+                              <br>
+                              <a href="#" class="btn" id="btnd2" onclick="adddrug('drug3','btnd2')">Add Drug</a>
+								</div>
+								
+
+                            </div>
+
+    
+                            <div class="test-info">
+                                <h6>Test Info</h6>
+								<div id="test1" class="test">
+									<hr>
+
+									<label for="name">Test Name:</label>
+									<select class="test-name" name="testname" id="test-name"  >
+										<option value="">Test Name</option>
+										<option value="Blood Sugar Test">Blood Sugar Test</option>
+										<option value="Blood Group Test"  >Blood Group Test</option>
+										<option value="Bone Scan"  >Bone Scan</option>
+										<option value="CT Scan"  >CT Scan</option>
+										<option value="DNA Test"  >DNA Test</option>
+										<option value="X-Ray"  >X-Ray</option>
+										<option value="Urea Test"  >Urea Test</option>
+									  </select>
+									<br>
+
+								  <textarea name="testcomment" id="comment" placeholder="comment" ></textarea>
+								  <br>
+								  <a href="#" class="btn" id="btnt1" onclick="addtest('test2','btnt1')">Add Test</a>
+								  <br>
+								</div>
+								<div id="test2" class="test">
+									<hr>
+
+									<label for="name">Test Name:</label>
+									<select class="test-name" name="testnamei" id="test-name"  >
+										<option value="">Test Name</option>
+										<option value="Blood Sugar Test">Blood Sugar Test</option>
+										<option value="Blood Group Test"  >Blood Group Test</option>
+										<option value="Bone Scan"  >Bone Scan</option>
+										<option value="CT Scan"  >CT Scan</option>
+										<option value="DNA Test"  >DNA Test</option>
+										<option value="X-Ray"  >X-Ray</option>
+										<option value="Urea Test"  >Urea Test</option>
+									  </select>
+									<br>
+								  <textarea name="testcommenti" id="testcommenti" placeholder="comment" ></textarea>
+								  <br>
+								  <a href="#" class="btn" id="btnt2" onclick="addtest('test3','btnt2')">Add Test</a>
+								  <br>
+								</div>
+
+                                
+                            </div>
+                            <button type="submit" class='btn-Register' id='do-Register'>Create Prescription</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+    
+
+			
+			<div id="profile" class="main">
+				<div class="profilecontainer">
+					profile
+				<table class="profiletable">
+					<tr>
+					  <td class="title">First Name :</td>
+					  <td><%=check.firstname%></td>
+					</tr>
+					<tr>
+					  <td class="title">Last Name :</td>
+					  <td><%=check.lastname%></td>
+					</tr>
+					<tr>
+						<td class="title">Gender :</td>
+						<td><%=check.gender%></td>
+					</tr>
+					<tr>
+						<td class="title">speciality :</td>
+						<td><%=check.speciality%></td>
+					</tr>
+					<tr>
+						
+					  <td class="title">Date of Birth :</td>
+					  <td><%=check.dob%></td>
+					</tr>
+					<tr>
+						<td class="title">Age :</td>
+						<td><%=check.age%></td>
+					</tr>
+					<tr>
+						<td class="title">Experience :</td>
+						<td><%=check.experience%></td>
+					</tr>
+					<tr>
+						<td class="title">Education :</td>
+						<td><%=check.education%></td>
+					</tr>
+					<tr>
+					  <td class="title">Phone Number :</td>
+					  <td><%=check.phno%></td>
+					</tr>
+					<tr>
+					  <td class="title">Email :</td>
+					  <td><%=check.email%></td>
+					</tr>
+					<tr>
+						<td class="title">Address :</td>
+						<td><%=check.address%></td>
+					</tr>
+					<tr>
+						<td class="title">Zipcode :</td>
+						<td><%=check.zipcode%></td>
+					  </tr>
+				  </table>
+				
+				</div>
+				
+			</div>
+
+
+		</div>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script>
+			function opencontainer(pagename){
+				var i,title,main;
+				
+				main = document.getElementsByClassName("main");
+    			for (i = 0; i < main.length; i++) {
+       				 main[i].style.display = "none";
+    			}
+				document.getElementById(pagename).style.display = "block";
+			}
+			document.getElementById("dash").click();
+			var i,main,main1;
+			main = document.getElementsByClassName("drugs");
+    			for (i = 1; i < main.length; i++) {
+       				 main[i].style.display = "none";
+    			}
+			main1= document.getElementsByClassName("test");
+    			for (i = 1; i < main1.length; i++) {
+       				 main1[i].style.display = "none";
+    			}
+			function adddrug(drugid,btnid){				
+				document.getElementById(drugid).style.display = "block";
+				document.getElementById(btnid).style.display = "none";
+				
+			}
+			function addtest(testid,btnid){				
+				document.getElementById(testid).style.display = "block";
+				document.getElementById(btnid).style.display = "none";
+				
+			}
+		</script>
+                    
+                </section>
+	</body>
+</html>
+
+

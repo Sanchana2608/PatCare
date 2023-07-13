@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <a href="#" class="logo">
+    PatCare</a>
+    <section class='add' id='add'>
+        <div class='form'>
+            <form class="add-form" action="/addreceptionist" method="post">
+              <div class="container">
+                <h1>Add New Receptionist</h1>
+                <div class="part1">
+                  <p>Enter Receptionist details</p>
+                  <hr>
+      
+                  <table>
+                    <tr>
+                      <td><label for="name">Receptionist ID:</label></td>
+                      <td><input type="text" name="rid" id="rid" ></td>
+                      <td><label for="password">Password:</label></td>
+                      <td><input type="text" name="password" id="password" ></td>
+                    </tr>
+                    <tr>
+                      <td><label for="name">Full Name:</label></td>
+                      <td><input type="text" name="fname" id="name" ></td>
+                      <td><label for="gender">Gender:</label></td>
+                      </td>
+                      <td>
+                        <select class="gen" name="gender" id="gender" onChange="showField(this.value);" required>
+                          <option value="">-- Select --</option>
+                          <option value="male"  >Male</option>
+                          <option value="female"  >Female</option>
+                          <option value="others"  >Other</option>
+                        </select></td>
+                    </tr>
+
+                       <tr >                      
+                      <td><label for="dob">Birthdate:</label></td>
+                      <td><input type="date" name="dob" id="dob"></td>
+                      <td><label for="age">Age:</label></td>
+                      <td><input type="number" name="age" id="age"></td>
+                      </tr>
+                        <tr >
+                          
+                          <td><label for="experience">Experience:</label></td>
+                          <td><input type="number" name="experience" id="experience"></td>
+                          <td><label for="email">Email:</label></td>
+                          <td><input type="text" name="email" id="email" ></td>
+                          </tr>
+                      <tr>
+                        
+                          <td><label for="phoneNumber">Phone Number:</label></td>
+                          <td><input type="number" name="phno" id="phoneNumber"></td>
+                          <td><label for="address">Address:</label></td>
+                        <td>
+                          <textarea name="address" id="address" ></textarea></td>
+                      </tr> 
+                    </table>
+                </div>
+        <hr>
+       
+        <button type="submit" class='btn-add' id='do-add'>Add</button>
+        <button  class='btn-back' onclick="history.back()" type="reset" value="Cancel">Back</button>
+        </div>
+            
+    </form>
+    </div>
+    </section>
+    <footer>
+      
+    </footer>
+    <!-- partial -->
+      <script  src="./script.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    
+    </body>
+    </html>
+
+
+  
